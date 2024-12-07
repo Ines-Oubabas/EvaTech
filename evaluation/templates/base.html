@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}EvaTech - Votre outil d’évaluation intelligent{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1 class="logo"><a href="{% url 'home' %}">EvaTech</a></h1>
+        <p class="slogan">Votre outil d’évaluation intelligent</p>
+        <nav class="nav">
+            <ul>
+                <li><a href="{% url 'home' %}">Accueil</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'dashboard' %}">Tableau de bord</a></li>
+                    <li><a href="{% url 'question_page' %}">Questions</a></li>
+                    <li><a href="{% url 'result_page' %}">Résultats</a></li>
+                    <li>
+                        <form method="POST" action="{% url 'logout' %}" style="display: inline;">
+                            {% csrf_token %}
+                            <button class="logout-btn" type="submit">Déconnexion</button>
+                        </form>
+                    </li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Connexion</a></li>
+                    <li><a href="{% url 'signup' %}">Inscription</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 EvaTech. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

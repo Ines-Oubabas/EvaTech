@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord - EvaTech</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1 class="logo"><a href="{% url 'home' %}">EvaTech</a></h1>
+        <p class="slogan">Votre outil d’évaluation intelligent</p>
+        <nav class="nav">
+            <ul>
+                <li><a href="{% url 'home' %}">Accueil</a></li>
+                <li><a href="{% url 'dashboard' %}">Tableau de bord</a></li>
+                <li><a href="{% url 'question_page' %}">Questions</a></li>
+                <li><a href="{% url 'result_page' %}">Résultats</a></li>
+                <li>
+                    <form method="POST" action="{% url 'logout' %}" style="display: inline;">
+                        {% csrf_token %}
+                        <button class="logout-btn" type="submit">Déconnexion</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1>Tableau de bord</h1>
+        <table border="1">
+            <tr>
+                <th>Question</th>
+                <th>Votre réponse</th>
+                <th>Correcte ?</th>
+            </tr>
+            {% for submission in submissions %}
+            <tr>
+                <td>{{ submission.question.text }}</td>
+                <td>{{ submission.answer }}</td>
+                <td>{{ submission.is_correct }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 EvaTech. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+    <title>Questions</title>
+</head>
+<body>
+    <h1>Liste des Questions</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% for question in questions %}
+            <p>{{ question.text }}</p>
+            <input type="text" name="answer_{{ question.id }}" placeholder="Votre réponse">
+        {% endfor %}
+        <button type="submit">Soumettre</button>
+    </form>
+</body>
+</html>

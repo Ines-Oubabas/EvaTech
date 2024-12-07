@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord Enseignant</title>
+    <link rel="stylesheet" href="{% static 'css/teacher_dashboard.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Tableau de bord Enseignant</h1>
+        <nav>
+            <a href="{% url 'home' %}">Accueil</a>
+            <a href="{% url 'create_test' %}">Créer un Test</a>
+            <a href="{% url 'logout' %}">Déconnexion</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Vos Tests</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom du Test</th>
+                    <th>Description</th>
+                    <th>Date de Création</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for test in tests %}
+                <tr>
+                    <td>{{ test.title }}</td>
+                    <td>{{ test.description }}</td>
+                    <td>{{ test.created_at|date:"d/m/Y" }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3">Aucun test créé pour le moment.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2024 EvaTech. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

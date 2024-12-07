@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests Disponibles</title>
+    <link rel="stylesheet" href="{% static 'css/available_tests.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Tests Disponibles</h1>
+        <nav>
+            <a href="{% url 'dashboard' %}">Retour au Tableau de bord</a>
+            <a href="{% url 'logout' %}">Déconnexion</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Liste des Tests</h2>
+        <ul class="test-list">
+            {% for test in tests %}
+            <li>
+                <h3>{{ test.title }}</h3>
+                <p>{{ test.description }}</p>
+                <a href="#">Démarrer le Test</a>
+            </li>
+            {% empty %}
+            <li>Aucun test disponible pour le moment.</li>
+            {% endfor %}
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 EvaTech. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

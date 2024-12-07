@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvaTech – Votre outil d’évaluation intelligent</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo">EvaTech</h1>
+        <p class="slogan">Votre outil d’évaluation intelligent</p>
+    </header>
+
+    <main class="main-content">
+        <section class="intro">
+            <h2>Bienvenue sur EvaTech</h2>
+            <p>Évaluez vos connaissances en toute simplicité grâce à notre plateforme intuitive et performante.</p>
+            <a href="{% url 'login' %}" class="cta-button">Se connecter</a>
+            <a href="{% url 'signup' %}" class="cta-button">Créer un compte</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 EvaTech. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

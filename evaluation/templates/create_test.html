@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un Test</title>
+    <link rel="stylesheet" href="{% static 'css/create_test.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Créer un Nouveau Test</h1>
+        <nav>
+            <a href="{% url 'teacher_dashboard' %}">Retour au Tableau de bord</a>
+            <a href="{% url 'logout' %}">Déconnexion</a>
+        </nav>
+    </header>
+    <main>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="title">Nom du Test :</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description :</label>
+                <textarea id="description" name="description" rows="5"></textarea>
+            </div>
+            <button type="submit">Créer le Test</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 EvaTech. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,253 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background-color: #121212;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    padding: 2rem;
+    background-color: #1a1a1a;
+    border-bottom: 2px solid #00bcd4;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header .logo {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #00bcd4;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.header .slogan {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-top: 0.5rem;
+}
+
+/* Navigation Styles */
+.nav {
+    margin-top: 1rem;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.nav li {
+    margin: 0 1.5rem;
+}
+
+.nav a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #bbb;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #00bcd4;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.main-content h2 {
+    font-size: 2.5rem;
+    color: #00bcd4;
+    margin-bottom: 1rem;
+}
+
+.main-content p {
+    font-size: 1.1rem;
+    margin: 1rem 0;
+    color: #bbb;
+    max-width: 600px;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    background-color: #00bcd4;
+    color: #121212;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    background-color: #0196a5;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Footer Section */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1a1a1a;
+    border-top: 2px solid #00bcd4;
+    margin-top: 2rem;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+/* Forms Styles */
+form {
+    margin-top: 2rem;
+    max-width: 400px;
+    width: 100%;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form button {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #00bcd4;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+form input:focus {
+    border-color: #00bcd4;
+    outline: none;
+}
+
+form button {
+    background-color: #00bcd4;
+    color: #121212;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+form button:hover {
+    background-color: #0196a5;
+    color: #fff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Table Styles */
+table {
+    width: 80%;
+    margin: 2rem auto;
+    border-collapse: collapse;
+    background-color: #1a1a1a;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border: 1px solid #00bcd4;
+}
+
+table th,
+table td {
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid #00bcd4;
+    color: #fff;
+}
+
+table th {
+    background-color: #00bcd4;
+    color: #121212;
+    text-transform: uppercase;
+}
+
+table tr:hover {
+    background-color: #1f1f1f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header .logo {
+        font-size: 2.5rem;
+    }
+
+    .main-content h2 {
+        font-size: 2rem;
+    }
+
+    .cta-button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    form {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    table {
+        width: 100%;
+    }
+}
+
+/* Messages Styles */
+.messages {
+    list-style: none;
+    padding: 0;
+    margin: 1rem auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+.messages li {
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+}
+
+.messages .success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.messages .error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
