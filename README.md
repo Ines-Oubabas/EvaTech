@@ -1,7 +1,7 @@
 # EvaTech
 
 ## Description
-System-E-Automatique est une plateforme web développée avec Django permettant de créer, gérer et évaluer des tests en ligne. Elle est destinée aux enseignants qui souhaitent évaluer les compétences des étudiants en proposant des tests interactifs. Les étudiants peuvent s'inscrire, passer les tests et consulter leurs résultats.
+EvaTech est une plateforme web développée avec Django permettant de créer, gérer et évaluer des tests en ligne. Elle est destinée aux enseignants qui souhaitent évaluer les compétences des étudiants en proposant des tests interactifs. Les étudiants peuvent s'inscrire, passer les tests et consulter leurs résultats.
 
 ---
 
